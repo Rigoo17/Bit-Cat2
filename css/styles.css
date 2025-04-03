@@ -1,0 +1,180 @@
+body{
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+nav{
+    background:  #001f3f;
+    height : 100px;
+    display: flex;
+}
+
+nav h1{
+    color: #58a6ff;
+    margin: 0;
+    display: flex;
+    justify-content: start;
+}
+.nav-links {
+    display: flex;
+    align-items: center; /* Keep items aligned */
+    gap: 40px; /* Reduce space between items */
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 80px; /* Reduce space between nav items */
+    margin: 0;
+    padding: 0;
+ 
+}
+
+nav ul li a {
+    color: #fff; 
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1f6feb;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background: #001f3f;
+    list-style: none;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    text-align: left;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 5px 15px;
+}
+
+.dropdown-menu li a:hover {
+    color: #1f6feb;
+    font-size: 20px; /* Slightly bigger font size */
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+/* Show dropdown when hovering over "Categories" */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.cart i{
+    font-size: 100px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 0;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+
+}
+
+/*Products-section*/
+
+/* Container for all products */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual product card */
+.product-card {
+    background-color: #222; /* Dark theme */
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Product card hover effect */
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Product images */
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+    height: 300px; /* Fixed height for uniformity */
+}
+
+/* Product title */
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Product description */
+.product-description {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Product price */
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f0a500; /* Gold color */
+}
+
+/* Add to Cart button */
+.add-to-cart {
+    background-color: #ff4500; /* Orange button */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #cc3700;
+}
+
+
