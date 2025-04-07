@@ -96,6 +96,10 @@ nav ul li a:hover {
     color: #fff;
     cursor: pointer;
 }
+.cart i:hover{
+    color: #1f6feb;
+    transition: color 0.3s ease-in-out;
+}
 
 .hero {
     text-align: center;

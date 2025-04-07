@@ -1,16 +1,16 @@
-// Step 1: Select the hero image element
+//  Select the hero image element
 const heroImage = document.querySelector(".hero img");
 
-// Step 2: Create an array of image paths
+//  Create an array of image paths
 const images = [
     "images/Game-setup3.png",
     "images/Game-setup4.png"
 ];
 
-// Step 3: Set an initial index
+//  Set an initial index
 let index = 0;
 
-// Step 4: Function to change the image
+//  Function to change the image
 function switchImage() {
     index++; // Move to the next image
     if (index >= images.length) {
@@ -19,7 +19,7 @@ function switchImage() {
     heroImage.src = images[index]; // Change the image source
 }
 
-// Step 5: Set an interval to change the image every 3 seconds
+// Set an interval to change the image every 3 seconds
 setInterval(switchImage, 3000);
 
 
@@ -42,7 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h3 class="product-title">${product.name}</h3>  
                 <p class="product-description">${product.description}</p>  
                 <p class="product-price">Price: Ksh ${product.price}</p> 
-                <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+               <button class="add-to-cart" 
+                             data-id="${product.id}" 
+                             data-name="${product.name}" 
+                             data-price="${product.price}">
+                             Add to Cart
+                </button>
+
             `;
            
             productList.appendChild(productDiv);
@@ -52,3 +58,34 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Function to add a product to the cart
+function addToCart(productId) {
+    console.log("Product added to cart:", productId);
+
+    // Example cart logic (you can expand this)
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(productId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Product added to cart!");
+}
+
+
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("add-to-cart")) {
+        const button = e.target;
+        const product = {
+            id: button.dataset.id,
+            name: button.dataset.name,
+            price: button.dataset.price
+        };
+        addToCart(product);
+    }
+});
+
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${product.name} added to cart!`);
+}
